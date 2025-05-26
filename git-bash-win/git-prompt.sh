@@ -1,3 +1,5 @@
+# ~/.config/git/git-prompt.sh
+
 PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]' # set window title
 PS1="$PS1"'\[\033[32m\]'       # change to green
 PS1="$PS1"'\u@\h '             # user@host<space>
