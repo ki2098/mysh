@@ -9,7 +9,6 @@ then
 	then
 		. "$COMPLETION_PATH/git-completion.bash"
 		. "$COMPLETION_PATH/git-prompt.sh"
-		PS1="$PS1"'\[\033[36m\]'  # change color to cyan
 		PS1="$PS1"'`__git_ps1`'   # bash function
 	fi
 fi
