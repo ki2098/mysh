@@ -15,24 +15,20 @@ function fish_prompt --description 'Write out the prompt'
         or set -lx fish_prompt_pwd_dir_length 0
 
         # Set git prompt styles
-        set -q __fish_git_prompt_color
-        or set -g __fish_git_prompt_color normal
+        set -q __fish_git_prompt_showcolorhints
+        or set -g __fish_git_prompt_showcolorhints 1
         set -q __fish_git_prompt_showdirtystate
         or set -g __fish_git_prompt_showdirtystate 1
-        set -q __fish_git_prompt_color_untrackedfiles
-        or set -g __fish_git_prompt_color_untrackedfiles red
-        # set -q __fish_git_prompt_char_untrackedfiles
-        # or set -g __fish_git_prompt_char_untrackedfiles '?'
+        # set -q __fish_git_prompt_color_untrackedfiles
+        # or set -g __fish_git_prompt_color_untrackedfiles red
         set -q __fish_git_prompt_showuntrackedfiles
         or set -g __fish_git_prompt_showuntrackedfiles 1
-        set -q __fish_git_prompt_color_branch_dirty
-        or set -g __fish_git_prompt_color_branch_dirty red
-        # set -q __fish_git_prompt_char_dirtystate
-        # or set -g __fish_git_prompt_char_dirtystate '*'
+        # set -q __fish_git_prompt_color_branch_dirty
+        # or set -g __fish_git_prompt_color_branch_dirty red
     
         # Color the prompt differently when we're root
         set -l color_cwd $fish_color_cwd --bold
-        set -l suffix '%'
+        set -l suffix '>'
         if functions -q fish_is_root_user; and fish_is_root_user
                 if set -q fish_color_cwd_root
                         set color_cwd $fish_color_cwd_root
