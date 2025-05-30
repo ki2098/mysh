@@ -3,7 +3,6 @@ alias ls='ls -hF --color=tty'
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWSTASHSTATE=true
 
 export MSYS=winsymlinks:nativestrict
 
