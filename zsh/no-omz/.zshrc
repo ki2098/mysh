@@ -40,7 +40,7 @@ source ~/.git-prompt.sh
 
 setopt PROMPT_SUBST
 PROMPT='%F{green}%B%n@%m%f %~%b$(__git_ps1)%(?.. %F{red}%?%f)
-> '
+%% '
 
 alias ls='ls --color=tty'
 
