@@ -31,16 +31,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-GIT_PS1_SHOWCOLORHINTS=true
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-
-source ~/.git-prompt.sh
-
-setopt PROMPT_SUBST
-PROMPT='%F{green}%B%n@%m%f %~%b$(__git_ps1)%(?.. %F{red}%?%f)
+PROMPT='%F{green}%B%n@%m%f %b%~%(?.. %F{red}%?%f)
 %% '
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+# PROMPT=\$vcs_info_msg_0_'%# '
+zstyle ':vcs_info:git:*' formats '%b'
 
 alias ls='ls --color=tty'
 
